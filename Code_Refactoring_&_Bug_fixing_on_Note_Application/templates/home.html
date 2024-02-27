@@ -1,0 +1,50 @@
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note Taking Application</title>
+    <style>
+        body {
+            background-color: #fff; /* Set your desired background color */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+            margin: 0;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 10px; /* Adjust margin as needed */
+        }
+
+</style>
+</head>
+<body>
+    <h1>Note Taking Application</h1>
+    <form action="/" method="post">
+        <input type="text" name="note" placeholder="Enter your note" required>
+        <button type="submit">Add Note</button>
+    </form>
+    
+    <ul>
+        {% if notes %}
+            {% for note in notes %}
+                <li>{{ note }}</li>
+            {% endfor %}
+        {% else %}
+            <li>Please add any note.</li>
+        {% endif %}
+    </ul>
+</body>
+</html>
